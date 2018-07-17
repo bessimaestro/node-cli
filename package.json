@@ -13,5 +13,8 @@
     "figlet": "^1.2.0",
     "inquirer": "^6.0.0",
     "shelljs": "^0.8.2"
+  },
+  "bin": {
+    "node-cli": "./index.js"
   }
 }

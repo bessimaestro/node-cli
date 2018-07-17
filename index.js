@@ -29,7 +29,7 @@ const askQuestions = () => {
             type: 'list',
             message: 'What is the file extension?',
             choices: ['.rb', '.js', '.php', '.css'],
-            filter: (val) => {
+            filter: function(val) {
                 return val.split('.')[1];
             }
         }
@@ -49,12 +49,12 @@ const success = (filepath) => {
     );
 }
 
-const run = async() => {
+const run = async () => {
     // show script introduction
     init();
     
     // ask questions
-    const answer = await askQuestions;
+    const answer = await askQuestions();
     const { FILENAME, EXTENSION } = answer;
     
     // create the file
