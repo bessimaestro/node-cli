@@ -2,18 +2,11 @@
 
 const inquirer = require('inquirer');
 const chalk = require('chalk');
-const figlet = require('figlet');
 const shell = require('shelljs');
 
 const init = () => {
     console.log(
-        chalk.green(
-            figlet.textSync("Node f*ucking JS", {
-                font: 'Ghost',
-                horizontalLayout: 'default',
-                verticalLayout: 'default'
-            })
-        )
+        chalk.black.bgGreen.bold("Node f*cking JS!")
     );
 }
 
@@ -29,7 +22,7 @@ const askQuestions = () => {
             type: 'list',
             message: 'What is the file extension?',
             choices: ['.rb', '.js', '.php', '.css'],
-            filter: function(val) {
+            filter: (val) => {
                 return val.split('.')[1];
             }
         }
@@ -45,7 +38,7 @@ const createFile = (filename, extension) => {
 
 const success = (filepath) => {
     console.log(
-        chalk.white.bgGreen.bold(`Done! File created at ${filepath}`)
+        chalk.green.bold(`Done! File created at ${filepath}`)
     );
 }
 
